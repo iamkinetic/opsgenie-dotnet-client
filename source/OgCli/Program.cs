@@ -10,74 +10,74 @@ namespace OpsGenieCli
     {
         private static void Main(string[] args)
         {
-            var options = new Options();
-            if (Parser.Default.ParseArguments(args, options))
-            {
-
-                if (!File.Exists(options.Config) && string.IsNullOrWhiteSpace(options.Key))
+            Parser.Default.ParseArguments<Options>(args)
+                .WithParsed(options =>
                 {
-                    Console.WriteLine("Config file not found.");                   
-                    return;
-                }
+                    if (!File.Exists(options.Config) && string.IsNullOrWhiteSpace(options.Key))
+                    {
+                        Console.WriteLine("Config file not found.");
+                        return;
+                    }
 
-                var opsGenieClient = OpsGenieHelper.CreateOpsGenieClient(
-                    OpsGenieHelper.GetOpsGenieConfig(options.Config, options.Key));
-                
-                switch (options.Action)
-                {
-                    case Action.Raise:
-                        opsGenieClient.Raise(
-                            new Alert
-                            {
-                                Alias = options.Alias,
-                                Message = options.Message,
-                                Source = options.Source,
-                                Description = options.Description,
-                                Recipients = !string.IsNullOrWhiteSpace(options.Recipients) 
-                                             ? options.Recipients.Split(new []{','},StringSplitOptions.RemoveEmptyEntries).ToList()
-                                             : null
-                            }
+                    var opsGenieClient = OpsGenieHelper.CreateOpsGenieClient(
+                        OpsGenieHelper.GetOpsGenieConfig(options.Config, options.Key));
+
+                    switch (options.Action)
+                    {
+                        case Action.Raise:
+                            opsGenieClient.Raise(
+                                new Alert
+                                {
+                                    Alias = options.Alias,
+                                    Message = options.Message,
+                                    Source = options.Source,
+                                    Description = options.Description,
+                                    Recipients = !string.IsNullOrWhiteSpace(options.Recipients)
+                                        ? options.Recipients.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                                            .ToList()
+                                        : null
+                                }
                             ).Wait();
-                        break;
-                    case Action.Acknowledge:
-                        opsGenieClient.Acknowledge(null, options.Alias, options.Note).Wait();
-                        break;
-                    case Action.Resolve:
-                        opsGenieClient.Close(null, options.Alias, options.Note).Wait();
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            }          
+                            break;
+                        case Action.Acknowledge:
+                            opsGenieClient.Acknowledge(null, options.Alias, options.Note).Wait();
+                            break;
+                        case Action.Resolve:
+                            opsGenieClient.Close(null, options.Alias, options.Note).Wait();
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                });
         }
 
         internal class Options
         {
-            [Option('c', "config", DefaultValue = "OpsGenie.config")]
+            [Option('c', "config", Default = "OpsGenie.config")]
             public string Config { get; set; }
 
-            [Option('k', "apikey", DefaultValue = "")]
+            [Option('k', "apikey", Default = "")]
             public string Key { get; set; }
 
-            [Option('s', "source", DefaultValue = "Sourcet")]
+            [Option('s', "source", Default = "Sourcet")]
             public string Source { get; set; }
 
-            [Option('m', "message", DefaultValue = "")]
+            [Option('m', "message", Default = "")]
             public string Message { get; set; }
 
-            [Option('a', "action", DefaultValue = Action.Raise)]
+            [Option('a', "action", Default = Action.Raise)]
             public Action Action { get; set; }
 
-            [Option('i', "alias", DefaultValue = null)]
+            [Option('i', "alias", Default = null)]
             public string Alias { get; set; }
 
-            [Option('d', "Description", DefaultValue = null)]
+            [Option('d', "Description", Default = null)]
             public string Description { get; set; }
 
-            [Option('n', "Note", DefaultValue = null)]
+            [Option('n', "Note", Default = null)]
             public string Note { get; set; }
            
-            [Option('r', "Recipients", DefaultValue = null)]
+            [Option('r', "Recipients", Default = null)]
             public string Recipients { get; set; }
 
         }

@@ -1,0 +1,68 @@
+2022-07-20 19:58:18.262 -04:00 [INF] Loaded 3 extensions
+2022-07-20 19:58:18.460 -04:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.408\
+2022-07-20 19:58:20.127 -04:00 [INF] Initializing upgrade step Select an entrypoint
+2022-07-20 19:58:20.131 -04:00 [INF] Setting entrypoint to user selected project: C:\Dev\opsgenie-dotnet-client\source\OpsGenieApi.UnitTests\OpsGenieApi.UnitTests.csproj
+2022-07-20 19:58:20.135 -04:00 [INF] Initializing upgrade step Select project to upgrade
+2022-07-20 19:58:20.183 -04:00 [INF] Initializing upgrade step Back up project
+2022-07-20 19:58:21.704 -04:00 [INF] Skipping upgrade step Back up project
+2022-07-20 19:58:21.705 -04:00 [INF] Upgrade step Back up project skipped
+2022-07-20 19:58:22.523 -04:00 [INF] Initializing upgrade step Convert project file to SDK style
+2022-07-20 19:58:23.171 -04:00 [INF] Applying upgrade step Convert project file to SDK style
+2022-07-20 19:58:23.174 -04:00 [INF] Converting project file format with try-convert, version 0.7.226301
+2022-07-20 19:58:23.408 -04:00 [INF] [dotnet] C:\Dev\opsgenie-dotnet-client\source\OpsGenieApi.UnitTests\OpsGenieApi.UnitTests.csproj contains an App.config file. App.config is replaced by appsettings.json in .NET Core. You will need to delete App.config and migrate to appsettings.json if it's applicable to your project.
+2022-07-20 19:58:24.311 -04:00 [INF] [dotnet] Conversion complete!
+2022-07-20 19:58:24.605 -04:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2022-07-20 19:58:29.031 -04:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2022-07-20 19:58:29.077 -04:00 [INF] Initializing upgrade step Clean up NuGet package references
+2022-07-20 19:58:30.235 -04:00 [INF] Marking assembly reference System.Configuration for removal based on package mapping configuration System.Configuration
+2022-07-20 19:58:30.240 -04:00 [INF] Adding package System.Configuration.ConfigurationManager based on package mapping configuration System.Configuration
+2022-07-20 19:58:30.241 -04:00 [INF] Marking assembly reference System.Net.Http.WebRequest for removal based on package mapping configuration HTTP packages
+2022-07-20 19:58:30.242 -04:00 [INF] Adding package System.Net.Http based on package mapping configuration HTTP packages
+2022-07-20 19:58:30.783 -04:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.4.336902) needs added
+2022-07-20 19:58:30.789 -04:00 [INF] References to be removed: System.Configuration
+System.Net.Http.WebRequest
+2022-07-20 19:58:30.791 -04:00 [INF] Packages to be added: System.Configuration.ConfigurationManager, Version=5.0.0
+System.Net.Http, Version=4.3.0
+Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.336902
+2022-07-20 19:58:31.912 -04:00 [INF] Applying upgrade step Clean up NuGet package references
+2022-07-20 19:58:31.917 -04:00 [INF] Removing outdated assembly reference: System.Configuration
+2022-07-20 19:58:31.918 -04:00 [INF] Removing outdated assembly reference: System.Net.Http.WebRequest
+2022-07-20 19:58:31.920 -04:00 [INF] Adding package reference: System.Configuration.ConfigurationManager, Version=5.0.0
+2022-07-20 19:58:31.921 -04:00 [INF] Adding package reference: System.Net.Http, Version=4.3.0
+2022-07-20 19:58:31.921 -04:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.336902
+2022-07-20 19:58:33.545 -04:00 [INF] Upgrade step Clean up NuGet package references applied successfully
+2022-07-20 19:58:34.827 -04:00 [INF] Initializing upgrade step Update TFM
+2022-07-20 19:58:34.862 -04:00 [INF] TFM needs updated to net5.0
+2022-07-20 19:58:35.898 -04:00 [INF] Applying upgrade step Update TFM
+2022-07-20 19:58:37.515 -04:00 [INF] Updated TFM to net5.0
+2022-07-20 19:58:37.516 -04:00 [INF] Upgrade step Update TFM applied successfully
+2022-07-20 19:58:38.639 -04:00 [INF] Initializing upgrade step Update NuGet Packages
+2022-07-20 19:58:39.710 -04:00 [INF] Marking package Microsoft.CSharp for removal because it appears to be a transitive dependency
+2022-07-20 19:58:39.738 -04:00 [INF] Marking package System.Data.DataSetExtensions for removal because it appears to be a transitive dependency
+2022-07-20 19:58:39.746 -04:00 [INF] Marking package System.Net.Http for removal because it appears to be a transitive dependency
+2022-07-20 19:58:39.840 -04:00 [INF] Packages to be removed: Microsoft.CSharp, Version=4.7.0
+System.Data.DataSetExtensions, Version=4.5.0
+System.Net.Http, Version=4.3.0
+2022-07-20 19:58:41.182 -04:00 [INF] Applying upgrade step Update NuGet Packages
+2022-07-20 19:58:41.185 -04:00 [INF] Removing outdated package reference: Microsoft.CSharp, Version=4.7.0
+2022-07-20 19:58:41.186 -04:00 [INF] Removing outdated package reference: System.Data.DataSetExtensions, Version=4.5.0
+2022-07-20 19:58:41.187 -04:00 [INF] Removing outdated package reference: System.Net.Http, Version=4.3.0
+2022-07-20 19:58:44.030 -04:00 [INF] Upgrade step Update NuGet Packages applied successfully
+2022-07-20 19:58:44.864 -04:00 [INF] Initializing upgrade step Add template files
+2022-07-20 19:58:44.870 -04:00 [INF] 0 expected template items needed
+2022-07-20 19:58:44.872 -04:00 [INF] Initializing upgrade step Upgrade app config files
+2022-07-20 19:58:44.888 -04:00 [INF] Found 1 app settings for upgrade: OpsGenieApiKey
+2022-07-20 19:58:44.892 -04:00 [INF] Found 0 connection strings for upgrade: 
+2022-07-20 19:58:46.202 -04:00 [INF] Applying upgrade step Convert Application Settings
+2022-07-20 19:58:46.497 -04:00 [INF] Upgrade step Convert Application Settings applied successfully
+2022-07-20 19:58:46.499 -04:00 [INF] Applying upgrade step Upgrade app config files
+2022-07-20 19:58:46.501 -04:00 [INF] Upgrade step Upgrade app config files applied successfully
+2022-07-20 19:58:47.790 -04:00 [INF] Initializing upgrade step Update source code
+2022-07-20 19:58:49.008 -04:00 [INF] Initializing upgrade step Move to next project
+2022-07-20 19:58:49.895 -04:00 [INF] Applying upgrade step Move to next project
+2022-07-20 19:58:49.898 -04:00 [INF] Upgrade step Move to next project applied successfully
+2022-07-20 19:58:51.342 -04:00 [INF] Initializing upgrade step Finalize upgrade
+2022-07-20 19:58:52.455 -04:00 [INF] Applying upgrade step Finalize upgrade
+2022-07-20 19:58:52.456 -04:00 [INF] Upgrade step Finalize upgrade applied successfully
+2022-07-20 19:58:53.629 -04:00 [INF] Upgrade has completed. Please review any changes.
+2022-07-20 19:58:53.635 -04:00 [INF] No state to save

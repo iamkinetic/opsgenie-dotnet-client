@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using OpsGenieApi.Model;
 
@@ -34,12 +35,12 @@ namespace OpsGenieApi.UnitTests
         {
             var apikey = ConfigurationManager.AppSettings["OpsGenieApiKey"];
 
-            Assert.IsNotNullOrEmpty(apikey,"Please set apikey in config");
+            Assert.That(apikey, Is.Not.Null.And.Not.Empty);
             Assert.That(apikey, Is.Not.SameAs("Your-Secret-Api-Key"), "Please replace default api key");
         }
 
         [Test]
-        public async void GetLast()
+        public async Task GetLast()
         {
             var client = CreateClient();
 
@@ -50,7 +51,7 @@ namespace OpsGenieApi.UnitTests
 
 
         [Test]
-        public async void Raise()
+        public async Task Raise()
         {
             var client = CreateClient();
 
@@ -69,7 +70,7 @@ namespace OpsGenieApi.UnitTests
 
 
         [Test]
-        public async void RaisetoTeam()
+        public async Task RaisetoTeam()
         {
             var client = CreateClient();
 
@@ -90,7 +91,7 @@ namespace OpsGenieApi.UnitTests
 
 
         [Test]
-        public async void CloseByAlertId()
+        public async Task CloseByAlertId()
         {
             var client = CreateClient();
 
@@ -118,7 +119,7 @@ namespace OpsGenieApi.UnitTests
        }
 
         [Test]
-        public async void CloseByAlias()
+        public async Task CloseByAlias()
         {
             var client = CreateClient();
 
@@ -144,7 +145,7 @@ namespace OpsGenieApi.UnitTests
 
 
         [Test]
-        public async void AckAndClose()
+        public async Task AckAndClose()
         {
             var client = CreateClient();
             var alias = Guid.NewGuid().ToString();
