@@ -5,7 +5,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <PackageId>opsgenie.client.dotnet</PackageId>
+    <PackageId>Iamkinetic.Simple.OpsGenieApi</PackageId>
     <Description>Simple Opsgenie Api Client for Alerts API ported to .Net 6</Description>
     <Version>6.0.0</Version>
   </PropertyGroup>
